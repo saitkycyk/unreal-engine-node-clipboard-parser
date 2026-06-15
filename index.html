@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE5 Blueprint Flow Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blueprint Flow Analyzer</h1>
+            <p>Paste raw UE5 T3D Blueprint text below to generate pseudo-code flow.</p>
+        </header>
+
+        <main>
+            <div class="editor-section">
+                <div class="header-row">
+                    <h2>Raw Blueprint Text</h2>
+                    <button id="analyze-btn" class="primary-btn">Analyze Workflow</button>
+                </div>
+                <textarea id="bp-input" placeholder='Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0"...'></textarea>
+            </div>
+
+            <div class="output-section">
+                <div class="header-row">
+                    <h2>Sanitized Pseudo-code</h2>
+                    <button id="copy-btn" class="secondary-btn">Copy to Clipboard</button>
+                </div>
+                <pre id="bp-output" class="output-display">Waiting for input...</pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

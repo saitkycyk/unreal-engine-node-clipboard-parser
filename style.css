@@ -1,0 +1,129 @@
+:root {
+    --bg-color: #1e1e1e;
+    --panel-bg: #252526;
+    --text-main: #d4d4d4;
+    --text-muted: #858585;
+    --accent-color: #0e639c;
+    --accent-hover: #1177bb;
+    --border-color: #3c3c3c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+}
+
+header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.editor-section, .output-section {
+    background-color: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+textarea {
+    width: 100%;
+    height: 300px;
+    background-color: #1e1e1e;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: 1px solid var(--accent-color);
+}
+
+.output-display {
+    width: 100%;
+    min-height: 200px;
+    background-color: #1e1e1e;
+    color: #ce9178; /* A nice string color for output */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+}
+
+.primary-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+.secondary-btn {
+    background-color: #4d4d4d;
+}
+
+.secondary-btn:hover {
+    background-color: #5e5e5e;
+}
