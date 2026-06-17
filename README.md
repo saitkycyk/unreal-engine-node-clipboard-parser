@@ -1,5 +1,7 @@
 # Blueprint Flow Analyzer for Unreal Engine
 
+**Live Demo:** [https://saitkycyk.github.io/unreal-engine-node-clipboard-parser/](https://saitkycyk.github.io/unreal-engine-node-clipboard-parser/)
+
 A lightweight, client-side web utility that translates copied Unreal Engine 5 Blueprint graph nodes (T3D text format) into human-readable, structured pseudo-code. Perfect for documenting workflows, sharing logic with non-Unreal developers, or debugging node connections in text form.
 
 ## Features
@@ -14,7 +16,7 @@ A lightweight, client-side web utility that translates copied Unreal Engine 5 Bl
 ## Live Demo & Usage
 
 ### 🚀 Try It Online
-You can easily host this page using **GitHub Pages**. Simply enable it under your repository settings (`Settings` -> `Pages` -> `Source: Deploy from branch`).
+You can try the analyzer directly at: [https://saitkycyk.github.io/unreal-engine-node-clipboard-parser/](https://saitkycyk.github.io/unreal-engine-node-clipboard-parser/)
 
 ### 🛠️ How to Use
 1. **In Unreal Engine**: Select the Blueprint nodes you want to analyze and press `Ctrl + C` (this copies their underlying text representation to your system clipboard).
