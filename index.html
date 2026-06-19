@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A lightweight utility to parse Unreal Engine 5 Blueprint nodes into human-readable pseudo-code.">
     <title>UE5 Blueprint Flow Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Blueprint Flow Analyzer</h1>
-            <p>Paste raw UE5 T3D Blueprint text below to generate pseudo-code flow.</p>
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ue-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                <h1>Blueprint Flow Analyzer</h1>
+            </div>
+            <p class="subtitle">Translate raw UE5 T3D text into readable pseudo-code logic.</p>
         </header>
 
-        <main>
-            <div class="editor-section">
-                <div class="header-row">
-                    <h2>Raw Blueprint Text</h2>
-                    <button id="analyze-btn" class="primary-btn">Analyze Workflow</button>
+        <main class="workspace">
+            <div class="panel input-panel">
+                <div class="panel-header">
+                    <h2>Raw Node Data</h2>
+                    <button id="analyze-btn" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        Analyze
+                    </button>
                 </div>
-                <textarea id="bp-input" placeholder='Begin Object Class=/Script/BlueprintGraph.K2Node_CallFunction Name="K2Node_CallFunction_0"...'></textarea>
+                <div class="editor-container">
+                    <textarea id="bp-input" spellcheck="false" placeholder="Paste your Unreal Engine nodes here (Ctrl+V)...&#10;&#10;Begin Object Class=/Script/BlueprintGraph..."></textarea>
+                </div>
             </div>
 
-            <div class="output-section">
-                <div class="header-row">
-                    <h2>Sanitized Pseudo-code</h2>
-                    <button id="copy-btn" class="secondary-btn">Copy to Clipboard</button>
+            <div class="panel output-panel">
+                <div class="panel-header">
+                    <h2>Parsed Flow</h2>
+                    <button id="copy-btn" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        Copy
+                    </button>
                 </div>
-                <pre id="bp-output" class="output-display">Waiting for input...</pre>
+                <div class="editor-container">
+                    <pre id="bp-output" class="code-output">Waiting for input...</pre>
+                </div>
             </div>
         </main>
     </div>
