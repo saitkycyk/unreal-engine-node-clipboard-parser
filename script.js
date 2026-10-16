@@ -61,7 +61,7 @@ function parseT3DToMarkdown(rawText) {
     // Helper: strip Unreal 32-character GUID hash from pin/var names
     function sanitizePinName(name) {
         if (!name) return "";
-        return name.replace(/_(\d+)_[A-F0-9]{32}$/i, "");
+        return name.trim().replace(/_(\d+)_[A-F0-9]{32}$/i, "");
     }
 
     // Helper: clean struct literal values (e.g. Vector, Rotator, Color)
@@ -246,7 +246,10 @@ function parseT3DToMarkdown(rawText) {
         else if (delegateRef) memberName = delegateRef[1];
         else if (className === "K2Node_DynamicCast") {
             const castMatch = blockContent.match(/TargetType=".*?([^\/"]+)'"/);
-            if (castMatch) memberName = `Cast To ${castMatch[1]}`;
+            if (castMatch) {
+                let cleanTarget = castMatch[1].split('.').pop().replace(/_C$/, "");
+                memberName = `Cast To ${cleanTarget}`;
+            }
         } else if (className === "K2Node_Event") {
             const evtName = blockContent.match(/EventSignatureName="([^"]+)"/);
             if (evtName) memberName = evtName[1];
